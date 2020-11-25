@@ -14,7 +14,6 @@ int main(){
 			//and returns less than 1 if string 1 is less than the string 2 and return grater 1 
 			//if string 1 is grater than string 2
 			if(r<=0){
-				printf("in the if \n");
 				strcpy(temp,string[j]);
 				strcpy(string[j],string[j+1]);
 				strcpy(string[j+1],temp);
