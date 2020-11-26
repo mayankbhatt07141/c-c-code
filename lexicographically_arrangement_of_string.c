@@ -11,9 +11,8 @@ int main(){
 	for(i=0;i<4;i++){
 		for(j=0;j<5-i-1;j++){
 			r=strcmp(string[j],string[j+1]); //it will return 0 if both te strings are same
-			//and returns less than 1 if string 1 is less than the string 2 and return grater 1 
-			//if string 1 is grater than string 2
-			if(r<=0){
+			//and returns less than 1 if string 1 is less than the string 2 and return grater or equal 1 if string 1 is grater than string 2
+			if(r>=1){
 				strcpy(temp,string[j]);
 				strcpy(string[j],string[j+1]);
 				strcpy(string[j+1],temp);
