@@ -2,7 +2,7 @@
 using namespace std;
 #include <bits/stdc++.h>
 int missingarray(int array[],int n){
-	sort(array.begin,array.end);
+	sort(array,array+n);
     for(int i=1;i<n;i++){
         if(array[i-1]!=i){
             return i;
