@@ -1,0 +1,48 @@
+public class Carrom {
+    public int collision=1,x=2,y=1,N=6;
+    public void getCordinate(){
+        while(collision>0){
+            while(x!=N&&y!=N){
+                x++;
+                y++;
+            }
+            collision--;
+            if(x==0||y==0||(x==N&&y==N)){
+                System.out.println("bingoo "+x+","+y);
+                return;
+            }
+            //first collision completed
+            if(x<N&&(y==N)){
+                collision--;
+                while(x!=N&&y>0){
+                    x++;
+                    y--;
+                    if(x==0||y==0||(x==N&&y==N)){
+                        System.out.println("bingoo "+x+","+y);
+                        return ;
+                    }
+                }
+            }
+             if((y<N)&&(x==N)){
+                    // System.out.println(x+","+y);
+                    // System.out.println("in the getcor");
+                    while(y!=N&&x>0){
+                        x--;
+                        y++;
+                        if(x==0||y==0||(x==N&&y==N)){
+                            System.out.println("bingoo "+x+","+y);
+                            return ;
+                        }
+                    }
+                collision--;
+            }
+    }
+    System.out.println(x+","+y);
+    }
+    public static void main(String[] args) {
+        Carrom Raja=new Carrom();
+        Raja.getCordinate();
+}
+
+}
+ 
