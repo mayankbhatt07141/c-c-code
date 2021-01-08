@@ -1,53 +1,64 @@
 public class Carrom {
-    public int collision=3,x=1,y=2,N=4;
-    public void getCordinate(){
-        while(collision>0){
-            if(x!=N&&y!=N){
-            while((x!=N)&&(y!=N)){
-                x++;
-                y++;
-            }
-            collision--;
-        }
-            if(x==0||y==0||(x==N)&&(y==N)){
-                    System.out.println("bingoo "+x+","+y);
-                    return;
-            }
-            if(x<N&&(y==N)){
-                collision--;
-                if(x>y){
-                    while(x!=N&&y>0){
-                        x++;
-                        y--;
-                        if(x==0||y==0||(x==N&&y==N)){
-                            System.out.println("bingoo "+x+","+y);
-                            return ;
-                        }
-                    }
-                }
-                else if(x<y){
-                    while(x>0){
-                        x--;
-                        y--;
-                    }
-                }
-            }
-             if((y<N)&&(x==N)){
-                    collision--;
-                    while((y!=N)&&(x>=0)){
-                        x--;
-                        y++;
-                        System.out.println(x+","+y);
-                        if(x==0||y==0||(x==N&&y==N)){
-                            System.out.println("bingoo "+x+","+y);
-                            return ;
-                        }
 
-                    }
+    public int collision=3,x=3,y=1,N=4;
+
+    public void getCordinate(){
+    //hitting coin and coin will strike first time
+        while((x!=4)&&(y!=4)){
+            x++;
+            y++;
+        }
+        if((x==4)&&(y==4)){
+           System.out.println(x+" "+y);
+            return;
+        }
+        collision--;
+
+        //coin will strike again 
+        while(collision>0){
+            if(x==4&&y<4){
+                collision--;
+                // System.out.println(x +" "+y );
+                while(y!=0&&x>0){
+                    x--;
+                    y--;
+                    // System.out.println(x +" "+y ); 
+                }
             }
-    }
-    if(collision<1)
-     System.out.println("position of coin "+x+","+y);
+
+           else if(y==4&&x<4){
+                collision--;
+                while(x!=4){
+                    x++;
+                    y--;
+                }
+            }
+
+            else if(x==0&&y>0){
+                collision--;
+                while(y!=0){
+                    x++;
+                    y--;
+                }
+            }
+
+            else if(y==0&&x>0){
+                collision--;
+                while(x!=0){
+                    x--;
+                    y++;
+                }
+            }
+
+            if((x==0&&y==0)&&(x==4&&y==0)&&(x==4&&y==4)&&(x==0&&y==4)){
+               System.out.println(x +" "+y );
+               return;
+            }
+
+        }
+        System.out.println(x +" "+y );
+
+
     }
     public static void main(String[] args) {
         Carrom Raja=new Carrom();
