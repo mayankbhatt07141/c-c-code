@@ -1,4 +1,4 @@
-/*Subtracting 1 from a decimal number flips all the bits after the rightmost set bit(which is 1) including the rightmost set bit.
+/* According to brain Kernigahan -Subtracting 1 from a decimal number flips all the bits after the rightmost set bit(which is 1) including the rightmost set bit.
 example-
 10 in binary is 00001010  
 9 in binary is 00001001 turned all bits 1 from rightmost set bit (turned 0)*/
